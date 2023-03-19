@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"><link  rel="stylesheet" href="style.css" >
+    
+    <link rel="stylesheet" href="./style.css"/>
+    <title>Code-Challenge: week 1 Toy Problems</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid" >
+                  <div class="navbar-header">
+                    <a  class="nav-link" target="studentGradeGenerator" class="navbar-brand btn" type="button"  href="">Toy Problems</a>
+                  </div>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a class="nav-link" target="studentGradeGenerator"  type="button" href="">Student Grade Generator</a></li>
+                    <li><a class="nav-link" target="speedDetector"  type="button" href="" >Speed Detector</a></li>
+                    <li><a class="nav-link" target="netSalaryCalculator" type="button" href="">Net salary Calculator</a></li>
+                  </ul>
+                </div>
+              </nav>
+        </header>
+        <section id="studentGradeGenerator">
+            <h3>Student Grade Generator (Toy Challenge)</h3>
+            <form id="gradesForm" action="">
+                <div class="form-group">
+                    <label class="control-label" for="marksInput">Enter student's Marks <input class="form-control" id="marksInput" type="number" name="marksInput" min="0" max="100" placeholder="0 - 100 "></label>
+                    
+                </div><br>
+                <input type="reset" class="btn btn-warning">
+                <input type="submit" class="btn btn-primary" value="submit">
+
+            </form>
+        </section>
+        <section id="speedDetector">
+            <h3>Speed Detector (Toy Challenge)</h3>
+            <form id="detectorForm">
+                <div class="form-group">
+                    <label class="control-label" for="speedInput">Enter Vehicle's Speed <input class="form-control" id="speedInput" type="number" name="speedInput" min="0" max="180" placeholder="0 - 180 "></label>
+                    
+                </div><br>
+                <input type="reset" class="btn btn-warning">
+                <input type="submit" class="btn btn-primary" value="submit">
+
+            </form>
+        </section>
+        <section id="netSalaryCalculator">
+            <h3>Net Salary Calculator</h3>
+            <form class="form-horizontal" id="challenge3FormInput">
+                <div class="form-group">
+                  <label class="group-label col-sm-4">
+                    Year of Taxation *
+  
+                  </label>
+                  <div class="col-sm-6">
+                    <select class="form-control" name="year" id="year">
+                      <option value="2022">2022</option>
+                      <option value="2021">2021</option>
+                      <option value="2020">2020</option>
+                      <option value="2019">2019</option>
+                      <option value="2018">2018</option>
+                      <option value="2017">2017</option>
+                      <option value="2016">2016</option>
+    
+                    </select>
+  
+                  </div>
+    
+  
+                </div>
+                <div class="form-group">
+                  <label class="form-label col-sm-4">
+                    Payment Period *
+                  </label>
+                  <div class="col-sm-6">
+                    <div class="col-sm-6">
+                      <label for="monthly" class="form-label col-sm-8">
+                        Monthly
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="monthly" name="payment_period" value="monthly">
+  
+                        
+                      </div>
+  
+                    </div>
+                    <div class="col-sm-6">
+                      
+                      <label for="yearly" class="form-label col-sm-8">
+                        Yearly
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="yearly" name="payment_period" value="yearly">
+  
+                        
+                      </div>
+                      
+                    </div>
+  
+  
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="grossSalary" class="form-label col-sm-4">Gross Salary *</label>
+                  <div class="col-sm-6">
+                    <input id="grossSalary" name="gross_salary" class="form-control" placeholder="Gross Salary">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="contributionBenefit" class="form-label col-sm-4">Contribution Benefit *</label>
+                  <div class="col-sm-6">
+                    <input class="form-control" name="contibution_benefit" id="contributionBenefit" placeholder="Contribution Benefit">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label col-sm-4">
+                    Do you have a disability excemption certificate?
+                  </label>
+                  <div class="col-sm-6">
+                    <div class="col-sm-6">
+                      <label for="yes" class="form-label col-sm-5">
+                        Yes
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="yes" name="disability_excemption_certificate" value="yes">
+  
+                        
+                      </div>
+  
+                    </div>
+                    <div class="col-sm-6">
+                      
+                      <label for="no" class="form-label col-sm-4">
+                        No
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="no" name="disability_excemption_certificate" value="no">
+  
+                        
+                      </div>
+                      
+                    </div>
+  
+  
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label col-sm-4">
+                    Do you have a Mortgage?
+                  </label>
+                  <div class="col-sm-6">
+                    <div class="col-sm-6">
+                      <label for="yes" class="form-label col-sm-5">
+                        Yes
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="yes" name="mortage" value="yes">
+  
+                        
+                      </div>
+  
+                    </div>
+                    <div class="col-sm-6">
+                      
+                      <label for="no" class="form-label col-sm-4">
+                        No
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="no" name="mortage" value="no">
+  
+                        
+                      </div>
+                      
+                    </div>
+  
+  
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label col-sm-4">
+                    Do you have a life insurance policy?
+                  </label>
+                  <div class="col-sm-6">
+                    <div class="col-sm-6">
+                      <label for="yes" class="form-label col-sm-5">
+                        Yes
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="yes" name="life_insurance_policy" value="yes">
+  
+                        
+                      </div>
+  
+                    </div>
+                    <div class="col-sm-6">
+                      
+                      <label for="no" class="form-label col-sm-4">
+                        No
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="no" name="life_insurance_policy" value="no">
+  
+                        
+                      </div>
+                      
+                    </div>
+  
+  
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label col-sm-4">
+                    Do you have a Home Ownership Savings Plan?
+                  </label>
+                  <div class="col-sm-6">
+                    <div class="col-sm-6">
+                      <label for="yes" class="form-label col-sm-5">
+                        Yes
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="yes" name="home_ownership_savings_plan" value="yes">
+  
+                        
+                      </div>
+  
+                    </div>
+                    <div class="col-sm-6">
+                      
+                      <label for="no" class="form-label col-sm-4">
+                        No
+  
+                      </label>
+                      <div class="col-sm-3">
+                        <input type="radio"id="no" name="home_ownership_savings_plan" value="no">
+  
+                        
+                      </div>
+                      
+                    </div>
+  
+  
+                  </div>
+                </div>
+                <button class="btn btn-warning" type="reset"> Reset</button>
+                <button class="btn btn-primary" type="submit">Calculate Net Salary</button>
+  
+  
+  
+  
+  
+  
+  
+  
+             </form>
+        </section>
+    </div>
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./index.js"></script>
+    <script src="./gradeCalculator.js"></script>
+    <script src="./speedDetector.js"></script>
+    <script src="./netSalaryCalculator.js"></script>  
+</body>
+</html>
