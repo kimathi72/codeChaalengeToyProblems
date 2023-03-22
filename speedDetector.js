@@ -3,7 +3,10 @@ console.log(speedForm);
 const speedLimit = 70;
 const speedDetectorCalculator = (num) => {
     let result = (num <=70) ? ("ok"):((num > 70 && num < 130)? (`Points : ${(num-70)/5}`) : ("License suspended"));
-    alert(result);
+    
+    let displayAnswer = document.createElement('div');
+    displayAnswer.innerHTML = result; 
+    document.getElementById("feedBack").appendChild(displayAnswer);
 } 
 speedForm.addEventListener("submit", function (e){
     e.preventDefault();

@@ -1,43 +1,17 @@
-
-
-document.getElementById("challenge3FormInput").addEventListener("submit", function(e){
-    e.preventDefault();
-    const form = e.target;
-    console.log(form);
-    const formFields = form.elements;
-    console.log(formFields);
-    const grossPay = formFields.grossSalary.value;
-    const userInput = formFields.map(function (item){
-        console.log(item);
-        const obj=Object.assign({},item["name"],item["name"].value );
-        console.log(obj);
-        return obj;
-
-    })
-    console.log(userInput);
-
-    console.log(grossPay);
-    const payeRates = [
-        {monthly : [
+const deductionsObj = {
+    payeRates : {
+        monthly : [
             {start:0,end:24000,deduction:10},
             {start:24001,end:32333,deduction:25},
             {start:32333,over:32333,deduction:30}
-        ]},
-        {yearly: [
+        ],
+        yearly: [
             {start:0,end:288000,deduction:10},
             {start:288001,end:38800,deduction:25},
             {start:388000,over:388000,deduction:30}
         ]}
-    ]; 
-    const reliefRates = [
-        {personal : {monthly: 2400,yearly: 28800}},
-        {insurance : {monthly: 5000,yearly: 60000}},
-        {pension : {monthly: 20000,yearly: 240000}},
-        {affordableHousing : {monthly: 25000,yearly: 300000}},
-        {allowableOwnerOccupier : {monthly: 25000,yearly: 60000}},
-        {disabilityExemption : {monthly: 150000,yearly: 1800000}}
-    ];
-    const nhifRates = [
+,
+    nhifRates : [
         {start: 0,end: 5999,deduction: 150},
         {start: 6000,end: 7999,deduction: 300},
         {start: 8000,end: 11999,deduction: 400},
@@ -55,6 +29,76 @@ document.getElementById("challenge3FormInput").addEventListener("submit", functi
         {start: 80000,end: 89999,deduction: 1500},
         {start: 90000,end: 99999,deduction: 1600},
         {start: 100000,over: 100000,deduction: 1700}
-    ];
-    const nssfRates = grossPay * 0.06 ;
+    ]
+} 
+
+
+document.getElementById("challenge3FormInput").addEventListener("submit", (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    console.log(form);
+    const formFields = form.elements;
+    const paymentPeriod = formFields.period.value;
+    const grossPay = formFields.grossSalary.value;
+
+    const paye = function () {
+        let result =  deductionsObj.payeRates[paymentPeriod].find(item => grossPay >= item.start && grossPay <= item.end || grossPay >= item.start && grossPay > item.over);
+        console.log(result.deduction);
+        return (grossPay * result.deduction)/100;
+    }();
+    paye;
+    console.log(paye);
+
+    const nhif = function () {
+        let nhifDeduction;
+        if (paymentPeriod === "yearly"){
+            let monthlyGrossPay = (grossPay / 12);
+            let result = deductionsObj.nhifRates.find(item => monthlyGrossPay >= item.start && monthlyGrossPay <= item.end || monthlyGrossPay >= item.start && monthlyGrossPay > item.over);
+            nhifDeduction = (result.deduction *12) ;
+        } else {
+            let result = deductionsObj.nhifRates.find(item => grossPay >= item.start && grossPay <= item.end || grossPay >= item.start && grossPay > item.over);
+            nhifDeduction = result.deduction;
+        }
+
+
+       console.log(nhifDeduction);
+        return nhifDeduction;
+
+    }();
+    nhif;
+    const nssf = function (){
+        return grossPay * 0.06;
+    }();
+    console.log(nssf);
+    nssf;
+    let totalDeductions = function(){
+        return paye + nssf + nhif;
+    }();
+
+    const netSalary = function (){
+        return grossPay - totalDeductions;
+    }();
+    console.log(netSalary);
+    netSalary;
+
+    let displayAnswer = document.createElement('div');
+    displayAnswer.innerHTML = `<p>The Net salary has been calculated to ${netSalary}</p><br>
+    <p>The total deductions are ${totalDeductions}, which include:</p>
+    <ul>
+    <li>Paye: ${paye}</li>
+    <li>Nhif: ${nhif}</li>
+    <li>Nssf: ${nssf}</li>
+
+    </ul>
+    <p>From a Gross Pay of ${grossPay}, ${paymentPeriod}</p>`;
+    document.getElementById("feedBack").appendChild(displayAnswer);
+
+
 })
+
+
+
+
+
+
+

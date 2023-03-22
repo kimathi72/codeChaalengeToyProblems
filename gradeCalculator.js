@@ -30,13 +30,14 @@ let grades = [
 
 gradeForm.addEventListener("submit", (e)=>{
     e.preventDefault();
-    console.log(e.target);
-    let mark = document.getElementById("marksInput").value;
-    console.log(mark);
-    let result = grades.find(item => mark >= item.start && mark < item.end);
-    console.log(result);
-    let grade = result.grade;
-    console.log(grade);
-    alert(`The Student's Grade is ${grade} with a Mark of ${mark}`);  
     
+    let mark = document.getElementById("marksInput").value;
+  
+    let result = grades.find(item => mark >= item.start && mark < item.end);
+    
+    let grade = result.grade;
+   
+    let displayAnswer = document.createElement('div');
+    displayAnswer.innerHTML =` The Student's Grade is ${grade} with a Mark of ${mark}`  
+    document.getElementById("feedBack").appendChild(displayAnswer);
 })
