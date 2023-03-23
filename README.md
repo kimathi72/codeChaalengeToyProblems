@@ -18,6 +18,9 @@ For example, if the speed is 80, it should print: “Points: 2”. If the driver
     The project is implement using javascript, html and css. index.html contains the markup for the forms.
     solutions to the code challenges are contained in javascript files with corresponding names to the code challenge. i.e, gradeCalculator.js contains the solution to the grade calculator challenge, e.t.c
 
+### project hosted on github pages:
+[Click here to checkout the project webpage here](https://kimathi72.github.io/codeChallengeToyProblems/)    
+
  #### Author : Roy Kimathi Waweru      
      
 
