@@ -41,6 +41,8 @@ gradeForm.addEventListener("submit", (e)=>{
     let grade = result.grade;
    // create dom element to contain the result and append it to the dom
     let displayAnswer = document.createElement('div');
-    displayAnswer.innerHTML =` The Student's Grade is ${grade} with a Mark of ${mark}`  
-    document.getElementById("feedBack").appendChild(displayAnswer);
+    displayAnswer.innerHTML =` The Student's Grade is,<span style = \"color: blue\">  ${grade} </span> ,with a Mark of, <span style = \"color: red\">  ${mark} </span> .`  
+    let displayDiv = document.getElementById("feedBack");
+    displayDiv.style = "display: flex; flex-direction:column; justify-content: center;"
+    displayDiv.appendChild(displayAnswer);
 })

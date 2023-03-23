@@ -100,7 +100,9 @@ document.getElementById("challenge3FormInput").addEventListener("submit", (e)=>{
 
     </ul>
     <p>From a Gross Pay of ${grossPay}, ${paymentPeriod}</p>`;
-    document.getElementById("feedBack").appendChild(displayAnswer);
+    let displayDiv = document.getElementById("feedBack");
+    displayDiv.style = "display: flex; flex-direction:column; justify-content: center;"
+    displayDiv.appendChild(displayAnswer);
 
 
 })

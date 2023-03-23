@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"><link  rel="stylesheet" href="style.css" >
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/fontawesome.min.css">
     <link rel="stylesheet" href="./style.css"/>
     <title>Code-Challenge: week 1 Toy Problems</title>
 </head>
@@ -25,31 +25,36 @@
                 </div>
               </nav>
         </header>
-        <section id="studentGradeGenerator">
+        <section class="card" id="studentGradeGenerator">
             <h3>Student Grade Generator (Toy Challenge)</h3>
             <form id="gradesForm" action="">
                 <div class="form-group">
                     <label class="control-label" for="marksInput">Enter student's Marks <input class="form-control" id="marksInput" type="number" name="marksInput" min="0" max="100" placeholder="0 - 100 "></label>
                     
-                </div><br>
-                <input type="reset" class="btn btn-warning">
-                <input type="submit" class="btn btn-primary" value="submit">
+                </div>
+                <div class="form-group" id="submitbuttons">
+                  <input type="reset" class="btn btn-warning">
+                  <input type="submit" class="btn btn-primary" value="submit">
 
+                </div>
+              
             </form>
         </section>
-        <section id="speedDetector">
+        <section class="card" id="speedDetector">
             <h3>Speed Detector (Toy Challenge)</h3>
             <form id="detectorForm">
                 <div class="form-group">
                     <label class="control-label" for="speedInput">Enter Vehicle's Speed <input class="form-control" id="speedInput" type="number" name="speedInput" min="0" max="180" placeholder="0 - 180 "></label>
                     
-                </div><br>
-                <input type="reset" class="btn btn-warning">
-                <input type="submit" class="btn btn-primary" value="submit">
+                </div>
+                <div class="form-group" id="submitbuttons">
+                  <input type="reset" class="btn btn-warning">
+                  <input type="submit" class="btn btn-primary" value="submit">
 
+                </div>
             </form>
         </section>
-        <section id="netSalaryCalculator">
+        <section class="card" id="netSalaryCalculator">
             <h3>Net Salary Calculator</h3>
             <form id="challenge3FormInput">
               <div class="form-group">
@@ -64,19 +69,15 @@
                 <div class="form-group">
                   <label for="grossSalary" class="control-label">Enter Gross Salary   <input name="grossSalary" class="form-control" placeholder="Gross Salary" required></label>
                 </div>
-                <button class="btn btn-warning" type="reset"> Reset</button>
-                <button class="btn btn-primary" type="submit">Calculate Net Salary</button>
-  
-  
-  
-  
-  
-  
-  
-  
+                <div class="form-group" id="submitbuttons">
+                  <input type="reset" class="btn btn-warning">
+                  <input type="submit" class="btn btn-primary" value="submit">
+
+                </div>
              </form>
         </section><br><br>
-        <section id="feedBack">
+        <section class="card" id="feedBack">
+          <h3><span style="color:azure">Results Shown Below: </span></h3><br>
 
         </section>
     </div>

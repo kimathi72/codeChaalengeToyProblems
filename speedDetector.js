@@ -10,7 +10,9 @@ const speedDetectorCalculator = (num) => {
     
     let displayAnswer = document.createElement('div');
     displayAnswer.innerHTML = result; 
-    document.getElementById("feedBack").appendChild(displayAnswer);
+    let displayDiv = document.getElementById("feedBack");
+    displayDiv.style = "display: flex; flex-direction:column; justify-content: center;"
+    displayDiv.appendChild(displayAnswer);
 } 
 //adding event listener, and calling speedDetectorCalculatoron submited speed value.
 speedForm.addEventListener("submit", function (e){
